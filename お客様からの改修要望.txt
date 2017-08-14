@@ -95,5 +95,5 @@
 　　final commit
 　　終わる気がしない・・・
 　　疲れた・・・
-・レビューはGitbucketのdiff機能を見ながら行いますので
-　レビュー前に必ずGitbucketにpushしてください
+・レビューはGithubのdiff機能を見ながら行いますので
+　レビュー前に必ずGithubにpushしてください
