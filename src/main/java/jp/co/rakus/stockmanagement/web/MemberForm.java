@@ -1,5 +1,7 @@
 package jp.co.rakus.stockmanagement.web;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -13,9 +15,11 @@ public class MemberForm {
 	private String name;
 	/** メールアドレス */
 	@NotBlank(message="メールアドレスを入力してください")
+	@Email(message="Eメールの形式が不正です")
 	private String mailAddress;
 	/** パスワード */
 	@NotBlank(message="パスワードを入力してください")
+	@Length(min=4,max=12,message="4文字以上12文字以内で入力して下さい")
 	private String password;
 	public String getName() {
 		return name;

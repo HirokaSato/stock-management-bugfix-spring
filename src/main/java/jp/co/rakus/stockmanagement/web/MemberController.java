@@ -53,7 +53,9 @@ public class MemberController {
 	 */
 	@RequestMapping(value = "/create")
 	public String create(@Validated MemberForm form, BindingResult rs,Model model) {
-		
+		if(rs.hasErrors()){
+			return "/member/form";
+		}
 		Member member = new Member();
 		BeanUtils.copyProperties(form, member);
 		memberService.save(member);

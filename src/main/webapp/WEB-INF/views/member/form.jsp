@@ -12,7 +12,7 @@
 			     	 氏名
 			    </th>
 			    <td>
-			    <form:errors path="name" cssStyle="color=red" element="div"/>
+			    <form:errors path="name" cssStyle="color:red" element="div"/>
 			    	<form:input path="name"  placeholder="Name"/>
 			    </td>
 			  </tr>
@@ -21,7 +21,7 @@
 			      	メールアドレス
 			    </th>
 			    <td>
-			    <form:errors path="mailAddress" cssStyle="color=red" element="div"/>
+			    <form:errors path="mailAddress" cssStyle="color:red" element="div"/>
 			    	<form:input path="mailAddress" placeholder="Email"/>
 			    </td>
 			  </tr>
@@ -30,7 +30,7 @@
 			     	 パスワード
 			    </th>
 			    <td>
-			    <form:errors path="password" cssStyle="color=red" element="div"/>
+			    <form:errors path="password" cssStyle="color:red" element="div"/>
 			    	<form:password path="password" placeholder="Password"/>
 			    </td>
 			  </tr>
