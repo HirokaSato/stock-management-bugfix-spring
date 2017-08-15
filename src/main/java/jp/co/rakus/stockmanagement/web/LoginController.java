@@ -1,5 +1,9 @@
 package jp.co.rakus.stockmanagement.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,7 +55,7 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/login")
 	public String login(@Validated LoginForm form,
-			BindingResult result, Model model) {
+			BindingResult result,HttpServletRequest req) {
 		if (result.hasErrors()){
 			return index();
 		}
@@ -63,7 +67,8 @@ public class LoginController {
             result.addError(error);
 			return index();
 		}
-		model.addAttribute("member", member);
+		HttpSession session = req.getSession();
+		session.setAttribute("member", member);
 		return "redirect:/book/list";
 	}
 }

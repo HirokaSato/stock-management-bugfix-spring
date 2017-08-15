@@ -51,7 +51,7 @@ public class MemberRepository {
 							+ mailAddress + "' and password='" + password + "'", param, MEMBER_ROW_MAPPER);
 			return member;
 		} catch (DataAccessException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 	}
