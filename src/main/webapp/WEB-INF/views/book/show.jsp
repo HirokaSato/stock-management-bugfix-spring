@@ -90,5 +90,10 @@
 		</div>
 	</div>
 </div>
+<center><form action="${pageContext.request.contextPath}/book/list" method="post">
+<input type="submit" value="戻る">
+</center>
+
+</form>
 </body>
 </html>
