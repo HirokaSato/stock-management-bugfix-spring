@@ -56,6 +56,10 @@ public class MemberController {
 		if(rs.hasErrors()){
 			return "/member/form";
 		}
+		if(memberService.findByMailAddress(form.getMailAddress())!=null){
+				rs.rejectValue("mailAddress",null ,"すでに登録しています");
+				return "/member/form";
+		} 
 		Member member = new Member();
 		BeanUtils.copyProperties(form, member);
 		memberService.save(member);
