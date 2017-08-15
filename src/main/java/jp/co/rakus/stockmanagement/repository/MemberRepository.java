@@ -64,7 +64,7 @@ public class MemberRepository {
 			member = jdbcTemplate.queryForObject(sql, param, MEMBER_ROW_MAPPER);
 			return member;
 		} catch (DataAccessException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 	}

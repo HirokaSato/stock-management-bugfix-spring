@@ -6,36 +6,53 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * メンバー関連のリクエストパラメータが入るフォーム.
+ * 
  * @author igamasayuki
  *
  */
 public class MemberForm {
 	/** 名前 */
-	@NotBlank(message="名前を入力してください")
+	@NotBlank(message = "名前を入力してください")
 	private String name;
 	/** メールアドレス */
-	@NotBlank(message="メールアドレスを入力してください")
-	@Email(message="Eメールの形式が不正です")
+	@NotBlank(message = "メールアドレスを入力してください")
+	@Email(message = "Eメールの形式が不正です")
 	private String mailAddress;
 	/** パスワード */
-	@NotBlank(message="パスワードを入力してください")
-	@Length(min=4,max=12,message="4文字以上12文字以内で入力して下さい")
+	@NotBlank(message = "パスワードを入力してください")
+	@Length(min = 4, max = 12, message = "4文字以上12文字以内で入力して下さい")
 	private String password;
+	@NotBlank(message = "パスワード確認欄に入力してください")
+	private String passwordCheck;
+
+	public String getPasswordCheck() {
+		return passwordCheck;
+	}
+
+	public void setPasswordCheck(String passwordCheck) {
+		this.passwordCheck = passwordCheck;
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getMailAddress() {
 		return mailAddress;
 	}
+
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
